@@ -164,7 +164,7 @@ async def m_cb(b, cb):
         await cb.message.delete()
 
 
-# play
+
 @Client.on_message(
     command("play")
     & filters.group
@@ -245,7 +245,7 @@ async def play(_, message: Message):
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://te.legra.ph/file/b1dbbb93b3f7f8049105e.jpg"
+        thumb_name = "https://telegra.ph/file/374e2bd35f02d1b2f6ae5.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
         views = "Locally added"
@@ -253,14 +253,14 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("• sᴜᴘᴘᴏʀᴛ •", url="t.me/teamDlt"),
-                    InlineKeyboardButton("• ᴜᴘᴅᴀᴛᴇs •", url="t.me/teamDlt_update"),
+                    InlineKeyboardButton("🇮🇳 Support", url="t.me/teamDlt"),
+                    InlineKeyboardButton("🇮🇳 Updates", url="t.me/teamDlt_update"),
                 ],
                 [
-                    InlineKeyboardButton("• ʏᴏᴜᴛᴜʙᴇ •", url=f"{url}"),
-                    InlineKeyboardButton("• ᴅᴏᴡɴʟᴏᴀᴅ •", url=f"{durl}"),
+                    InlineKeyboardButton("▶️ Youtube", url=f"{url}"),
+                    InlineKeyboardButton("📤 Download", url=f"{durl}"),
                 ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
             ]
         )
 
@@ -293,22 +293,22 @@ async def play(_, message: Message):
                 secmul *= 60
 
             keyboard = InlineKeyboardMarkup(
+            [
                 [
-                    [
-                    InlineKeyboardButton("• sᴜᴘᴘᴏʀᴛ •", url="t.me/teamDlt"),
-                    InlineKeyboardButton("• ᴜᴘᴅᴀᴛᴇs •", url="t.me/teamDlt_update"),
+                    InlineKeyboardButton("🇮🇳 Support", url="t.me/teamDlt"),
+                    InlineKeyboardButton("🇮🇳 Updates", url="t.me/teamDlt_update"),
                 ],
                 [
-                    InlineKeyboardButton("• ʏᴏᴜᴛᴜʙᴇ •", url=f"{url}"),
-                    InlineKeyboardButton("• ᴅᴏᴡɴʟᴏᴀᴅ •", url=f"{durl}"),
+                    InlineKeyboardButton("▶️ Youtube", url=f"{url}"),
+                    InlineKeyboardButton("📤 Download", url=f"{durl}"),
                 ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
             ]
-            )
+        )
 
         except Exception as e:
             title = "NaN"
-            thumb_name = "https://te.legra.ph/file/b1dbbb93b3f7f8049105e.jpg"
+            thumb_name = "https://telegra.ph/file/374e2bd35f02d1b2f6ae5.jpg"
             duration = "NaN"
             views = "NaN"
             keyboard = InlineKeyboardMarkup(
@@ -328,10 +328,10 @@ async def play(_, message: Message):
             return await lel.edit(
                 "😕 **𝐜𝐨𝐮𝐥𝐝𝐧'𝐭 𝐟𝐢𝐧𝐝 𝐬𝐨𝐧𝐠 𝐲𝐨𝐮 𝐫𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 ‼️  𝐩𝐥𝐞𝐚𝐬𝐞 𝐩𝐫𝐨𝐯𝐢𝐝𝐞 𝐭𝐡𝐞 𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐬𝐨𝐧𝐠 𝐧𝐚𝐦𝐞 𝐨𝐫 𝐢𝐧𝐜𝐥𝐮𝐝𝐞 𝐭𝐡𝐞 𝐚𝐫𝐭𝐢𝐬𝐭'𝐬 𝐧𝐚𝐦𝐞 𝐚𝐬 𝐰𝐞𝐥𝐥\nExample » /play In The End\n\nChannel : @teamDlt_update**"
             )
-        await lel.edit("🔎 **𝐏𝐥𝐞𝐚𝐬𝐞 𝐖𝐚𝐢𝐭 𝐒𝐞𝐚𝐫𝐜𝐡𝐢𝐧𝐠....**")
+        await lel.edit("🔎 **Searching..**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("🎵 **𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐢𝐧𝐠 𝐦𝐮𝐬𝐢𝐜...**")
+        await lel.edit("🎵 **Processing song..**")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -354,22 +354,22 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "❌ 𝐜𝐨𝐮𝐥𝐝𝐧'𝐭 𝐟𝐢𝐧𝐝 𝐬𝐨𝐧𝐠 𝐲𝐨𝐮 𝐫𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝.\n\n𝐩𝐥𝐞𝐚𝐬𝐞 𝐩𝐫𝐨𝐯𝐢𝐝𝐞 𝐭𝐡𝐞 𝐜𝐨𝐫𝐫𝐞𝐜𝐭 𝐬𝐨𝐧𝐠 𝐧𝐚𝐦𝐞 𝐨𝐫 𝐢𝐧𝐜𝐥𝐮𝐝𝐞 𝐭𝐡𝐞 𝐚𝐫𝐭𝐢𝐬𝐭'𝐬 𝐧𝐚𝐦𝐞 𝐚𝐬 𝐰𝐞𝐥𝐥."
+                "Which song you wanna play?"
             )
             print(str(e))
             return
 
         keyboard = InlineKeyboardMarkup(
             [
-                 [
-                    InlineKeyboardButton("• sᴜᴘᴘᴏʀᴛ •", url="t.me/teamDlt"),
-                    InlineKeyboardButton("• ᴜᴘᴅᴀᴛᴇs •", url="t.me/teamDlt_update"),
+                [
+                    InlineKeyboardButton("🇮🇳 Support", url="t.me/teamDlt"),
+                    InlineKeyboardButton("🇮🇳 Updates", url="t.me/teamDlt_update"),
                 ],
                 [
-                    InlineKeyboardButton("• ʏᴏᴜᴛᴜʙᴇ •", url=f"{url}"),
-                    InlineKeyboardButton("• ᴅᴏᴡɴʟᴏᴀᴅ •", url=f"{durl}"),
+                    InlineKeyboardButton("▶️ Youtube", url=f"{url}"),
+                    InlineKeyboardButton("📤 Download", url=f"{durl}"),
                 ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                [InlineKeyboardButton(text="❌ Close", callback_data="cls")],
             ]
         )
 
